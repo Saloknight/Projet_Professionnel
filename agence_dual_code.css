@@ -115,6 +115,126 @@ a {
     object-fit: contain;
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+.accessibility-menu {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.accessibility-menu > summary {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    color: var(--color-ink);
+    font-size: 14px;
+    font-weight: 800;
+    list-style: none;
+    cursor: pointer;
+}
+
+.accessibility-menu > summary::-webkit-details-marker { display: none; }
+
+.accessibility-panel {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 10px);
+    right: auto;
+    left: 0;
+    width: min(320px, calc(100vw - 32px));
+    padding: 18px;
+    border: 1px solid var(--color-line);
+    border-radius: 6px;
+    background: var(--color-white);
+    box-shadow: 0 12px 32px rgb(32 49 39 / 16%);
+    color: var(--color-ink);
+}
+
+.accessibility-title {
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.accessibility-field {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.accessibility-field label {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.accessibility-field input,
+.accessibility-toggle input { accent-color: var(--color-forest); }
+.accessibility-field input { width: 100%; }
+
+.accessibility-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block: 12px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.accessibility-toggle input {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+}
+
+.accessibility-help {
+    margin: 14px 0;
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.accessibility-reset {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-forest);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+html[data-reading="comfortable"] body {
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.85;
+}
+
+html[data-contrast="high"] {
+    --color-ink: #000;
+    --color-forest: #183700;
+    --color-leaf: #284a00;
+    --color-muted: #222;
+    --color-paper: #fff;
+    --color-sage: #f0f0f0;
+    --color-white: #fff;
+    --color-line: #555;
+    --color-orange: #7a3500;
+}
+
+html[data-contrast="high"] a:not(.button) { text-decoration: underline; }
+
 .text-accent {
     color: var(--color-orange);
 }
@@ -228,6 +348,10 @@ h2,
 h3 {
     font-family: var(--font-heading);
     line-height: 1.16;
+}
+
+html[data-text-scale]:not([data-text-scale="100"]) :is(h1, h2, h3) {
+    overflow-wrap: anywhere;
 }
 
 h1 {
@@ -530,7 +654,9 @@ h3 { margin-bottom: 10px; font-size: 20px; letter-spacing: -0.5px; }
 }
 
 .avatar-alt { background: #f2e7dc; color: var(--color-orange); }
-.avatar-photo { object-fit: cover; image-rendering: pixelated; }
+.avatar-photo { object-fit: cover; }
+.avatar-photo-nicolas { object-position: center 32%; }
+.avatar-pixelated { image-rendering: pixelated; }
 .team-role { color: var(--color-leaf); font-size: 12px; font-weight: 800; }
 .team-card h3 { margin-bottom: 8px; font-size: 25px; }
 .team-card > p { min-height: 92px; }
@@ -915,7 +1041,9 @@ h3 { margin-bottom: 10px; font-size: 20px; letter-spacing: -0.5px; }
 
 @media (max-width: 900px) {
     .section { padding-block: 78px; }
-    .navigation { gap: 20px; }
+    .header-content { gap: 16px; }
+    .navigation { gap: 8px; }
+    .accessibility-panel { position: fixed; top: 104px; right: 16px; left: auto; }
     .hero-layout { gap: 32px; }
     .hero-art { min-height: 340px; }
     .intro-layout,
@@ -934,6 +1062,7 @@ h3 { margin-bottom: 10px; font-size: 20px; letter-spacing: -0.5px; }
     .site-header .brand img { width: 124px; height: 80px; }
     .header-content { min-height: 68px; }
     .footer-brand img { width: 124px; height: 80px; object-fit: contain; }
+    .accessibility-panel { position: fixed; top: 84px; right: 16px; left: auto; }
     .menu-toggle {
         display: grid;
         width: 42px;

@@ -19,12 +19,6 @@
                 <img src="Logo.svg" alt="" width="56" height="56">
             </a>
 
-            <button class="menu-toggle" id="menu-toggle" type="button"
-                    aria-controls="primary-navigation" aria-expanded="false"
-                    aria-label="Ouvrir le menu">
-                <span></span><span></span><span></span>
-            </button>
-
             <nav class="navigation" id="primary-navigation" aria-label="Navigation principale" hidden>
                 <a href="#agence">L'agence</a>
                 <a href="#vision">Notre vision</a>
@@ -34,6 +28,35 @@
                 <a href="#empreinte">Empreinte</a>
                 <a class="button button-small" href="#contact">Parler de mon projet</a>
             </nav>
+
+            <div class="header-controls">
+                <details class="accessibility-menu">
+                    <summary aria-label="Options d’accessibilité">Aa</summary>
+                    <div class="accessibility-panel">
+                        <p class="accessibility-title">Options d’accessibilité</p>
+                        <div class="accessibility-field">
+                            <label for="text-scale">Taille du texte <output id="text-scale-value" for="text-scale">100 %</output></label>
+                            <input id="text-scale" type="range" min="100" max="150" step="10" value="100">
+                        </div>
+                        <label class="accessibility-toggle" for="contrast-mode">
+                            <input id="contrast-mode" type="checkbox">
+                            Contraste renforcé
+                        </label>
+                        <label class="accessibility-toggle" for="reading-mode">
+                            <input id="reading-mode" type="checkbox" aria-describedby="accessibility-help">
+                            Lecture facilitée
+                        </label>
+                        <p class="accessibility-help" id="accessibility-help">Police sans empattement et interligne plus ample ; les préférences de lecture varient selon chacun.</p>
+                        <button class="accessibility-reset" id="reset-accessibility" type="button">Réinitialiser</button>
+                    </div>
+                </details>
+
+                <button class="menu-toggle" id="menu-toggle" type="button"
+                        aria-controls="primary-navigation" aria-expanded="false"
+                        aria-label="Ouvrir le menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -127,7 +150,7 @@
                 <div class="team-grid">
                     <article class="team-card">
                         <div class="team-top">
-                            <div class="avatar" aria-hidden="true">N</div>
+                            <img class="avatar avatar-photo avatar-photo-nicolas" src="Nicolas.jpg" alt="Portrait de Nicolas" width="52" height="52" loading="lazy" decoding="async">
                             <span class="team-role">Back-end & mise en ligne</span>
                         </div>
                         <h3>Nicolas</h3>
@@ -141,7 +164,7 @@
                     </article>
                     <article class="team-card">
                         <div class="team-top">
-                            <img class="avatar avatar-alt avatar-photo" src="Yohann.png" alt="Avatar illustré de Yohann" width="52" height="52" loading="lazy" decoding="async">
+                            <img class="avatar avatar-alt avatar-photo avatar-pixelated" src="Yohann.png" alt="Avatar illustré de Yohann" width="52" height="52" loading="lazy" decoding="async">
                             <span class="team-role">Front-end & interface</span>
                         </div>
                         <h3>Yohann</h3>
