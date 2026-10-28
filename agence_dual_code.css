@@ -746,6 +746,64 @@ h3 { margin-bottom: 10px; font-size: 20px; letter-spacing: -0.5px; }
 
 .faq-contact .text-link { margin-left: 6px; white-space: nowrap; }
 
+.carbon-section {
+    background: var(--color-forest);
+    color: var(--color-white);
+}
+
+.carbon-layout {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.65fr 1.35fr;
+    gap: 64px;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.carbon-score {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.carbon-score-label {
+    color: #d7e2d3;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.carbon-grade {
+    margin-block: 4px;
+    color: #e6edda;
+    font-family: var(--font-heading);
+    font-size: 96px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.carbon-score-caption {
+    color: #e2e8e1;
+    font-size: 13px;
+}
+
+.carbon-copy .eyebrow { color: #d7e2d3; }
+.carbon-copy h2 { max-width: 520px; color: var(--color-white); }
+.carbon-copy > p:not(.eyebrow) { color: #e2e8e1; font-size: 14px; }
+.carbon-copy .carbon-note { color: #d7e2d3; font-size: 12px; }
+
+.carbon-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 700;
+    text-underline-offset: 4px;
+}
+
+.carbon-source:hover { color: #f0c6a9; }
+
 .contact-section {
     background: var(--color-sage);
 }
@@ -918,6 +976,10 @@ h3 { margin-bottom: 10px; font-size: 20px; letter-spacing: -0.5px; }
     .icon-box { margin-bottom: 15px; }
     .team-grid,
     .service-grid { grid-template-columns: 1fr; }
+    .carbon-layout { grid-template-columns: 1fr; gap: 30px; }
+    .carbon-copy { text-align: center; }
+    .carbon-copy .eyebrow { justify-content: center; }
+    .carbon-copy h2 { margin-inline: auto; }
     .team-card > p { min-height: 0; }
     .contact-layout { gap: 28px; }
     .footer-main { align-items: flex-start; flex-wrap: wrap; }
